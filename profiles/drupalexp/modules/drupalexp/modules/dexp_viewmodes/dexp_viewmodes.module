@@ -1,0 +1,30 @@
+<?php
+
+/**
+* Implements hook_entity_info_alter().
+*/
+function dexp_viewmodes_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['alt'] = array(
+    'label' => t('Alternate'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['node']['view modes']['customise'] = array(
+    'label' => t('Customise'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
+* Implements hook_preprocess_node().
+*/
+function dexp_viewmodes_preprocess_node(&$vars) {
+  if($vars['view_mode'] == 'alt') {
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__alt';
+  }
+  if($vars['view_mode'] == 'time_line') {
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__customise';
+  }
+} 
+
+
+?>

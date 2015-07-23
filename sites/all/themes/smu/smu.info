@@ -1,0 +1,69 @@
+name = SMU
+description = "SMU - PGR"
+core = 7.x
+base theme = drupalexp
+
+
+regions[top_first] = Top First
+regions[top_second] = Top Second
+regions[top_third] = Top Third
+regions[top_fourth] = Top Fourth
+regions[top_fifth] = Top Fifth
+regions[top_sixth] = Top Sixth
+regions[social_top] = Search Top
+regions[contact_info] = Contact Info
+regions[cart] = Cart
+regions[slider] = Slider
+regions[logo] = Logo
+regions[navigation] = Navigation
+regions[breadcrumb] = Breadcrumb
+regions[pagetitle] = Page Title
+regions[google_maps] = maps
+regions[content] = Content
+regions[sidebar] = Sidebar
+
+regions[features] = Features
+regions[feature_first] = Feature First
+regions[feature_second] = Feature Second
+regions[feature_third] = Features Third
+regions[feature_fourth] = Feature Fourth
+regions[testimonials] = Testimonials
+
+regions[footer_first] = Footer First
+regions[footer_second] = Footer Second
+regions[footer_third] = Footer Third
+regions[footer_fourth] = Footer Fourth
+regions[footer_fifth] = Footer Fifth
+regions[footer_sixth] = Footer Sixth
+
+regions[footer_left] = Footer Left
+regions[footer_right] = Footer Right
+
+lessc[] = lessc/fonts.less
+lessc[] = lessc/mixin.less
+lessc[] = lessc/general.less
+lessc[] = lessc/style.less
+lessc[] = lessc/block.less
+lessc[] = lessc/blog.less
+lessc[] = lessc/shortcode.less
+lessc[] = lessc/mainmenu.less
+lessc[] = lessc/portfolio.less
+lessc[] = lessc/simister.less
+lessc[] = lessc/slideshow.less
+lessc[] = lessc/pages.less
+lessc[] = lessc/shop.less
+lessc[] = lessc/config.less
+lessc[] = lessc/color.less
+lessc[] = lessc/quicksettings.less
+lessc[] = lessc/style-rtl.less 
+
+scripts[] = assets/js/main.js
+
+
+settings[drupalexp_default_preset] = '0'
+settings[toggle_main_menu] = '0'
+settings[drupalexp_layout] = 'wide'
+settings[default_logo] = '1'
+settings[logo_path] = 'logo.png'
+settings[toggle_main_menu] = '0'
+settings[drupalexp_smoothscroll] = '1'
