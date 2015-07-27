@@ -1,10 +1,5 @@
 <?php
 
-function dexp_shortcodes_process_page(&$variables) {
-  $path = drupal_get_path('module', 'dexp_shortcodes');  
-  drupal_add_js($path . '/asset/js/dexp_shortcode_bxslider.js');  
-}
-
 function dexp_shortcodes_bxslider_shortcode_info(&$shortcodes) {
   $shortcodes['bxslider'] = array(
       'title' => t('Bx Slider'),

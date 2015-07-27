@@ -57,6 +57,7 @@ lessc[] = lessc/color.less
 lessc[] = lessc/quicksettings.less
 lessc[] = lessc/style-rtl.less 
 
+scripts[] = assets/js/readmore.js
 scripts[] = assets/js/main.js
 
 

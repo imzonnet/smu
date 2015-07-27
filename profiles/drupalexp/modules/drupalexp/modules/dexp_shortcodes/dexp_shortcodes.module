@@ -21,6 +21,8 @@ module_load_include('inc','dexp_shortcodes','includes/bxslider');
 module_load_include('inc','dexp_shortcodes','includes/lightbox');
 module_load_include('inc','dexp_shortcodes','includes/tab_testimonial');
 module_load_include('inc','dexp_shortcodes','includes/callout');
+
+module_load_include('inc','dexp_shortcodes','includes/album');
 /**
 * Implements hook_wysiwyg_editor_settings_alter().
 */
@@ -63,6 +65,7 @@ function dexp_shortcodes_shortcode_info() {
  dexp_shortcodes_tab_testimonials_shortcode_info($shortcodes);
  dexp_shortcodes_tab_testimonial_shortcode_info($shortcodes);
  dexp_shortcodes_callout_shortcode_info($shortcodes);
+ dexp_shortcodes_album_shortcode_info($shortcodes);
  return $shortcodes;
 }
 
@@ -93,5 +96,12 @@ function dexp_shortcodes_theme(){
   dexp_shortcodes_bxitem_theme($themes);
   dexp_shortcodes_lightbox_theme($themes);
   dexp_shortcodes_callout_theme($themes);
+  dexp_shortcodes_album_theme($themes);
   return $themes;
+}
+
+function dexp_shortcodes_process_page(&$variables) {
+    $path = drupal_get_path('module', 'dexp_shortcodes');
+    drupal_add_js($path . '/asset/js/dexp_shortcode_bxslider.js');
+    drupal_add_js($path . '/asset/js/dexp_shortcode_album.js');
 }

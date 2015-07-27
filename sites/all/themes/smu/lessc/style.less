@@ -23,14 +23,7 @@ body {
 	padding-top: 30px;
 	padding-bottom: 20px;
 }
-form.webform-client-form{
-	.form-item{
-		width: 370px;   
-		display: inline-block;
-		margin-left: 1%;
-		margin-right: 1%;
-	}
-}
+
 ul, ol {
     padding-left: 20px;
     li {
@@ -63,11 +56,18 @@ input[type=date], input[type=email], input[type=number], input[type=password], i
 }
 #section-page-title {
     .region-pagetitle {
-        height: 230px;
-        margin-bottom: -50px;
         .custom-banner {
             height: 230px;
             font-size: 0;
+            margin-bottom: -50px;
+        }
+        .page-banner {
+            height: 230px;
+            margin-bottom: -50px;
+            img {
+                height: 230px;
+                width: 100%;
+            }
         }
     }
 }
@@ -163,6 +163,7 @@ input[type=date], input[type=email], input[type=number], input[type=password], i
             display: block;
             line-height: 27.3px;
             text-decoration: none;
+            font-family: @pro_semibold;
         }
     }
     #global-nav-tab-wrapper {
@@ -467,6 +468,13 @@ input[type=date], input[type=email], input[type=number], input[type=password], i
             line-height: 24px;
             margin-bottom: 5px;
             height: 60px;
+            color: #333333;
+        }
+        p {
+            min-height: 100px;
+            &:last-child {
+                min-height: auto;
+            }
         }
         .readmore {
             font-family: @pro_extrabold;
@@ -486,6 +494,11 @@ input[type=date], input[type=email], input[type=number], input[type=password], i
 /*
 ---> testimonial-header
 */
+.view-testimonials {
+    .dexp-grid-item:nth-child(2n+1) {
+        clear: left;
+    }
+}
 .testimonial-header {
     h2 {
         font-size: 26px;
@@ -514,6 +527,7 @@ input[type=date], input[type=email], input[type=number], input[type=password], i
             line-height: 20px;
             margin: 0 0 5px;
             padding: 0;
+            color: #333333;
         }
         .job {
             font-family: @pro_semibold;
@@ -795,7 +809,7 @@ section-main-content
                         font-size: 18px;
                         line-height: 20px;
                         cursor: pointer;
-                        &.active, &:hover {
+                        &.active, &:hover, &.active-trail {
                             color: #9a7d4a;
                         }
                     }
@@ -874,6 +888,15 @@ section-main-content
 .btn-controls-icon {
     text-align: center;
     margin-top: 65px;
+    &.dark {
+        .btn {
+            border-color: #9a7d4a;
+            color: #9a7d4a;
+            &:hover, &:active, &:focus {
+                background-color: #9a7d4a;
+            }
+        }
+    }
     .btn {
         margin: 0 40px 40px 0;
         white-space: normal;
@@ -881,7 +904,7 @@ section-main-content
         color: #00699b;
         background-color: #FFF;
         border: 2px solid #00699b;
-        height: 170px;
+        min-height: 170px;
         width: 200px;
         padding: 0 10px;
         line-height: 20px;
@@ -927,6 +950,336 @@ section-main-content
             [class^="col-"] {
                 padding: 5px;
             }
+        }
+    }
+}
+.node-page {
+    table {
+        width: 100%;
+        margin-bottom: 20px;
+        tr {
+            vertical-align: top;
+            border-bottom: 2px solid #c9d8e1;
+            border-left: 2px solid #c9d8e1;
+            &.row-blue, &.blue {
+                background-color: #e5f3fc;
+            }
+            th {
+                text-align: center;
+                min-height: 60px;
+                height: 60px;
+                color: #FFF;
+                border-bottom: 0;
+                border-right: 2px solid #c9d8e1;
+                font-family: @pro_extrabold;
+                font-size: 18px;
+                background-color: #0D2875;
+                vertical-align: middle;
+            }
+            td {
+                padding: 20px;
+                border-right: 2px solid #c9d8e1;
+            }
+        }
+    }
+}
+
+.testimonial-student {
+    background-color: #f6f6f6;
+    border-top: 2px solid #9a7d4a;
+    padding: 20px 55px 30px 70px;
+        font-style: italic;
+    .field-name-body {
+        margin-bottom: 30px;
+        position: relative;
+        &:before {
+            content: "\f10d";
+            font-family: FontAwesome;
+            font-size: 30px;
+            position: absolute;
+            top: 0;
+            left: -50px;
+            color: #9a7d4a;
+        }
+        &:after {
+            content: "\f10e";
+            font-family: FontAwesome;
+            font-size: 30px;
+            position: absolute;
+            bottom: -20px;
+            right: -30px;
+            color: #9a7d4a;
+        }
+    }
+    .title {
+
+    }
+}
+
+/*
+Album Photo
+*/
+.dexp-album {
+    padding-right: 20px;
+    margin-bottom: 30px;
+    .content {
+        position: relative;
+        &:hover {
+            .photo-item {
+                .overlay {
+                    opacity: 1;
+                }
+            }
+        }
+        .photo-item {
+            display: none;
+            position: relative;
+            &:first-child {
+                display: block;
+            }
+            img {
+                width: 100%;
+            }
+            .overlay {
+                transition: all 300ms ease-in-out;
+                opacity: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                color: #FFF;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.4);
+                .fa {
+                    display: block;
+                    font-size: 24px;
+                    margin-bottom: 15px;
+                }
+                span {
+                    text-align: center;
+                    font-size: 18px;
+                    font-family: @pro_extrabold;
+                    text-transform: uppercase;
+                    left: 0;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    -moz-transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .footer {
+        font-family: @pro_extrabold;
+        line-height: 20px;
+        font-size: 18px;
+        color: #333;
+        padding: 15px 20px;
+        background-color: #f6f6f6;
+        .fa {
+            float: right;
+        }
+    }
+}
+
+/**
+node-graduate
+*/
+.node-graduate {
+    &.node-teaser {
+        overflow: hidden;
+        .header {
+            overflow: hidden;
+            margin-bottom: 20px;
+            @media screen and (max-width: 468px){
+                .avatar {
+                    width: 100%!important;
+                    float: left;
+                    clear: both;
+                    text-align: center;
+                    img {
+                        max-width: 100%!important;
+                    }
+                }
+                .info {
+                    width: 100%!important;
+                }
+            }
+            .avatar {
+                width: 25%;
+                float: left;
+                img {
+                    max-width: 180px;
+                }
+            }
+            .info {
+                width: 75%;
+                float: left;
+                h2 {
+                    font-family: @pro_extrabold;
+                    color: #333333;
+                    font-size: 24px;
+                    margin: 0;
+                    padding: 0;
+                    text-transform: none;
+                }
+                .field-name-field-graduate-job {
+                    font-size: 16px;
+                    font-family: @pro_semibold;
+                    text-transform: uppercase;
+                    color: #959595;
+                }
+            }
+        }
+        .content {
+            .field {
+                padding: 15px;
+                font-size: 14px;
+                @media screen and (max-width: 767px){
+                    .field-label,
+                    .field-items {
+                        display: block;
+                        width: 100% !important;
+                        float: none;
+                        clear: both;
+                        padding: 0!important;
+                    }
+                }
+                .field-label {
+                    width: 170px;
+                }
+                .field-items {
+                    float: none;
+                    padding-left: 180px;
+                }
+                &.field-name-field-research-interests,
+                &.field-name-field-members {
+                    background-color: #e5f3fc;
+                }
+            }
+        }
+    }
+}
+.view-graduates,
+.view-phd-in-economics-graduates{
+    .view-header {
+        margin-bottom: 20px;
+    }
+    .views-row {
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #DDD;
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+    }
+}
+
+form.webform-client-form{
+    .form-item{
+        display: block;
+        input[type="date"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="text"], input[type="url"], input.form-control, select, textarea {
+            width: 370px;
+            display: inline-block;
+            .border-radius();
+        }
+        label {
+            display: inline-block;
+            width: 170px;
+        }
+    }
+    #webform-component-interested,
+    #webform-component-personal-data-protection .fieldset-wrapper {
+        label {
+            width: auto!important;
+        }
+        .form-item {
+            .form-checkbox,
+            .form-radio {
+                display: inline-block;
+                padding-right: 10px;
+                margin: 0;
+            }
+            label {
+                padding-left: 5px;
+            }
+        }
+    }
+    #webform-component-personal-data-protection {
+        legend {
+            background-color: #e5f3fc;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            font-family: @mypro_regular;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0d2874;
+            border: 1px solid #cfd4e3;
+            padding-left: 20px;
+        }
+        .fieldset-wrapper {
+            padding: 0 20px;
+        }
+    }
+    #edit-actions {
+        padding-left: 20px;
+        #edit-submit {
+            background-color: #0d2874;
+            font-family: @mypro_regular;
+            font-weight: 700;
+            font-size: 13px;
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+}
+
+.page-node-70 {
+    #section-main-content {
+        .row {
+            position: relative;
+        }
+    }
+    .region-sidebar {
+        width: 0!important;
+        position: static;
+        padding: 0!important;
+        #block-block-17 {
+            left: 15px;
+            position: absolute;
+            top: 0;
+            width: 26%;
+            .block-title {
+                height: 50px;
+                line-height: 50px;
+                background-color: rgba(13, 40, 116, 0.7);
+                color: #FFF;
+                padding:0 0 0 30px;
+                font-size: 18px;
+                text-transform: uppercase;
+                margin: 0;
+            }
+            .content {
+                font-size: 0;
+            }
+        }
+    }
+    .region-content {
+        width: 100%!important;
+        padding-left: 30px;
+        #block-dexp-page-elements-dexp-page-elements-breadcrumb {
+            width: 75%;
+            float: right;
+        }
+        #block-system-main {
+            clear: both;
         }
     }
 }

@@ -33,6 +33,9 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+    $('.menu-toggler').click(function(e) {
+        e.preventDefault();
+    });
     /*menu scroll to section*/
     if(window.location.hash) {
         setTimeout(function(){
@@ -54,9 +57,21 @@ jQuery(document).ready(function ($) {
 
     function scrollTo(id) {
         if($(id).length) {
-            var n = $(id).offset().top-10;
+            var n = $(id).offset().top-20;
             var r = Math.round(1e3+n/15);
             $("html, body").animate({scrollTop:n},r);
         }
     }
+
+    /**
+     * Lightbox View Large Image
+     */
+    $('.lightbox-view').append('<span>Click to view larger image.</span>');
+
+    /**
+     * Testimonial Readmore
+     */
+    $('.testimonial-teaser .field-name-body .field-item').readmore({
+        collapsedHeight : 60
+    })
 });
